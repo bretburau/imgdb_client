@@ -1,28 +1,30 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { connect } from 'react-redux'
+import * as actions from './actions/pieceActions';
+import { bindActionCreators } from 'redux'
+import PieceList from './components/Piecelist';
+import TopNav from './components/TopNav'
+export class App extends Component {
 
-class App extends Component {
+  componentDidMount() {
+    this.props.actions.fetchPieces(); 
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <TopNav />
+        <PieceList pieces={this.props.pieces.pieces.pieces} /> {/*why is pieces all nested like this?*/}
       </div>
     );
   }
 }
 
-export default App;
+const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(actions, dispatch)
+})
+
+const mapStateToProps = state => ({pieces: state})
+
+export const ConnectedApp = connect(mapStateToProps, mapDispatchToProps)(App)
