@@ -3,7 +3,7 @@ import fetch from 'isomorphic-fetch'
 export function fetchTags() {
     return(dispatch) => {
         dispatch({type: 'LOADING_PIECES'});
-        return fetch('http://vast-taiga-24562.herokuapp.com/tags')
+        return fetch('https://vast-taiga-24562.herokuapp.com/tags')
             .then(response => response.json())
             .then(tags => dispatch({type: 'FETCH_TAGS', payload: tags}))
     }
