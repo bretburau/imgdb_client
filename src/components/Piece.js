@@ -8,7 +8,7 @@ const Piece = (props) => {
     return(
         <Col md="3">
             <Card className='text-center'>
-                <img width='100%' src={props.piece.picture.url} />
+                <img width='100%' src={"https://vast-taiga-24562.herokuapp.com" + props.piece.picture.url} />
                 <CardBody>
                     <CardTitle>{props.piece.name}</CardTitle>
                     <CardSubtitle>Subtitle</CardSubtitle>
