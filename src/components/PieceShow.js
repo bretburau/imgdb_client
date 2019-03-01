@@ -29,7 +29,7 @@ class PieceShow extends React.Component {
                         <Row>
                             <Col className='text-center'>
                                 <h3>{piece.name}</h3>
-                                <img src={piece.picture.url} alt={piece.name} width='300'/>
+                                <img src={"https://vast-taiga-24562.herokuapp.com" + piece.picture.url} alt={piece.name} width='300'/>
                                 <h4>Tags:</h4>
                                 <ul className='clean-ul'>{tags}</ul>
                             </Col>
