@@ -11,8 +11,6 @@ const Piece = (props) => {
                 <img width='100%' src={"https://vast-taiga-24562.herokuapp.com" + props.piece.picture.url} />
                 <CardBody>
                     <CardTitle>{props.piece.name}</CardTitle>
-                    <CardSubtitle>Subtitle</CardSubtitle>
-                    <CardText>Card Text</CardText>
                     <Link to={`/pieces/${props.piece.id}`}>View</Link>
                 </CardBody>
             </Card>
