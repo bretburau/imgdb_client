@@ -12,7 +12,7 @@ export function fetchPieces() {
 export function addPiece(formPayload) {
     return(dispatch) => {
         dispatch({type: 'ADDING_PIECE'});
-        return fetch(`https://vast-taiga-24562.herokuapp.com/pieces/create`, {
+        return fetch(`localhost:3001/pieces/create`, {
             credentials: 'same-origin',
             headers: {},
             method: 'POST',
